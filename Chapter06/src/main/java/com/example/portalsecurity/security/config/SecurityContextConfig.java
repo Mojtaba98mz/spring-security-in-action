@@ -11,14 +11,14 @@ import org.springframework.security.core.context.SecurityContextHolder;
 public class SecurityContextConfig {
 
     //start 6.2.2
-    //@Bean
+    @Bean
     public InitializingBean initializingBean() {
         return () -> SecurityContextHolder.setStrategyName(SecurityContextHolder.MODE_INHERITABLETHREADLOCAL);
     }
     //end 6.2.2
 
     //start 6.2.3
-    //@Bean
+    @Bean
     public InitializingBean initializingBean2() {
         return () -> SecurityContextHolder.setStrategyName(SecurityContextHolder.MODE_GLOBAL);
     }
