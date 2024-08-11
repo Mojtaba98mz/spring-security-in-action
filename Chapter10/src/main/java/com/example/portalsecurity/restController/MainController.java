@@ -1,50 +1,25 @@
-package com.example.portalsecurity.controller.restController;
+package com.example.portalsecurity.restController;
 
-import com.example.portalsecurity.controller.dto.PersonDto;
-import com.example.portalsecurity.service.PersonService;
-import jakarta.validation.Valid;
-import lombok.AllArgsConstructor;
-import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.util.List;
+@Controller
+public class MainController {
 
-@RestController
-@RequestMapping("/portal/person")
-@AllArgsConstructor
-public class PersonController {
-
-    private final PersonService personService;
-
-    @GetMapping
-    @PreAuthorize("hasAnyRole('ROLE_ADMIN')")
-    public List<PersonDto> loadPersonList() {
-        return personService.findAll();
+    @GetMapping("/")
+    public String main() {
+        return "home";
     }
 
-    @GetMapping("{id}")
-    @PreAuthorize("hasAnyRole('ROLE_ADMIN')")
-    public ResponseEntity<PersonDto> loadPersonById(@PathVariable("id") Long id) {
-        PersonDto personDto = personService.findById(id);
-        return ResponseEntity.ok(personDto);
+    @PostMapping("/test")
+    @ResponseBody
+//    @CrossOrigin("http://localhost:9090")
+    public String test() {
+        System.out.println("#################################> Test method called");
+        return "HELLO";
     }
 
-    @PostMapping
-    @PreAuthorize("hasAuthority('person:write')")
-    public PersonDto insertPerson(@Valid @RequestBody PersonDto personDto) {
-        return personService.insert(personDto);
-    }
-
-    @PutMapping(path = "{id}")
-    @PreAuthorize("hasAuthority('person:write')")
-    public PersonDto updatePerson(@PathVariable Long id, @Valid @RequestBody PersonDto personDto) {
-        return personService.update(id, personDto);
-    }
-
-    @DeleteMapping(path = "{id}")
-    @PreAuthorize("hasAuthority('person:write')")
-    public void deletePerson(@PathVariable Long id) {
-        personService.delete(id);
-    }
 }
