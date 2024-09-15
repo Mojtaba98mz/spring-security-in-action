@@ -91,7 +91,6 @@ public class SecurityConfig {
                                 AuthorizationGrantType.AUTHORIZATION_CODE)
                         .redirectUri("https://www.manning.com/authorized")
                         .scope(OidcScopes.OPENID)
-                        .clientSettings(ClientSettings.builder().requireProofKey(true).build())
                         .build();
         return new InMemoryRegisteredClientRepository(registeredClient);
     }
