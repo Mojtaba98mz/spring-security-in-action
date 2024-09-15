@@ -19,4 +19,5 @@ public class DocumentService {
     public void updateDocument(Document document, String newContent) {
         document.setContent(newContent);
     }
+
 }
