@@ -96,6 +96,7 @@ public class SecurityConfig {
                                 AuthorizationGrantType.AUTHORIZATION_CODE)
                         .authorizationGrantType(
                                 AuthorizationGrantType.CLIENT_CREDENTIALS)
+                        .authorizationGrantType(AuthorizationGrantType.REFRESH_TOKEN)
                         .redirectUri("https://www.manning.com/authorized")
 //                        .tokenSettings(TokenSettings.builder()
 //                                .accessTokenFormat(OAuth2TokenFormat.REFERENCE)
@@ -105,7 +106,7 @@ public class SecurityConfig {
         return new InMemoryRegisteredClientRepository(registeredClient);
     }
 
-    @Bean
+    /*@Bean
     public JWKSource<SecurityContext> jwkSource()
             throws NoSuchAlgorithmException {
         KeyPairGenerator keyPairGenerator =
@@ -127,7 +128,7 @@ public class SecurityConfig {
     @Bean
     public AuthorizationServerSettings authorizationServerSettings() {
         return AuthorizationServerSettings.builder().build();
-    }
+    }*/
 
     @Bean
     public OAuth2TokenCustomizer<JwtEncodingContext> jwtCustomizer() {
