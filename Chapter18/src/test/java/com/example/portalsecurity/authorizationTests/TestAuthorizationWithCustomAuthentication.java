@@ -12,7 +12,7 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 //18.3
 @SpringBootTest
 @AutoConfigureMockMvc
-public class TestSecurityWithCustomAuthentication {
+public class TestAuthorizationWithCustomAuthentication {
 
     @Autowired
     private MockMvc mockMvc;

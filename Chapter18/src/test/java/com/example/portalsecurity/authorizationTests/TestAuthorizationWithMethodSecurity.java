@@ -11,7 +11,7 @@ import org.springframework.security.test.context.support.WithMockUser;
 
 //18.4
 @SpringBootTest
-public class TestSecurityWithMethodSecurity {
+public class TestAuthorizationWithMethodSecurity {
 
     @Autowired
     private NameService nameService;
