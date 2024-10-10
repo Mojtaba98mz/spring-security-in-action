@@ -7,7 +7,7 @@ import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.web.SecurityFilterChain;
 
-//18.3
+//18.3, //18.5 httpBasic
 @Configuration
 @AllArgsConstructor
 public class SecurityConfiguration2 {

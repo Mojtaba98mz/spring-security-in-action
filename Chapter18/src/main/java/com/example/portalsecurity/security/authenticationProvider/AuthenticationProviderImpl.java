@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-//18.3
+//18.3, //18.5 httpBasic
 @Component
 public class AuthenticationProviderImpl /*implements AuthenticationProvider*/ {
 //    @Override

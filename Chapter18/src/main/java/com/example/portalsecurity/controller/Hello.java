@@ -26,4 +26,9 @@ public class Hello {
     public String helloWithNameService() {
         return "hello ".concat(nameService.getName());
     }
+
+    @GetMapping("/demo")
+    public String demo() {
+        return "Demo";
+    }
 }
