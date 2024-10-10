@@ -18,7 +18,7 @@ public class SecurityConfiguration5 {
 
     private final JwtAuthenticationConverter converter;
 
-    @Bean
+//    @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.oauth2ResourceServer(c -> c.jwt(
                 j -> j.jwkSetUri(keySetUri)

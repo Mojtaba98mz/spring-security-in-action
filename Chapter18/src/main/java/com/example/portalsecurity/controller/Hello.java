@@ -4,6 +4,7 @@ import com.example.portalsecurity.service.NameService;
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -30,5 +31,10 @@ public class Hello {
     @GetMapping("/demo")
     public String demo() {
         return "Demo";
+    }
+
+    @PostMapping("/hello")
+    public String postHello() {
+        return "Post Hello!";
     }
 }
