@@ -11,8 +11,8 @@ import java.util.List;
 
 //18.3
 @Component
-public class AuthenticationProviderImpl implements AuthenticationProvider {
-    @Override
+public class AuthenticationProviderImpl /*implements AuthenticationProvider*/ {
+//    @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
         String username = authentication.getName();
         String password = String.valueOf(authentication.getCredentials());
@@ -24,7 +24,7 @@ public class AuthenticationProviderImpl implements AuthenticationProvider {
         }
     }
 
-    @Override
+//    @Override
     public boolean supports(Class<?> authentication) {
         return UsernamePasswordAuthenticationToken.class.isAssignableFrom(authentication);
     }

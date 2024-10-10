@@ -1,6 +1,5 @@
 package com.example.portalsecurity.security.config;
 
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -12,7 +11,7 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 @Configuration
 public class SecurityConfiguration3 {
 
-    @Bean
+    //@Bean
     UserDetailsService userDetailsService() {
         var john = User.withUsername("natalie")
                 .password("12345")
@@ -25,7 +24,7 @@ public class SecurityConfiguration3 {
         return new InMemoryUserDetailsManager(john, mary);
     }
 
-    @Bean
+    //@Bean
     public PasswordEncoder passwordEncoder() {
         return NoOpPasswordEncoder.getInstance();
     }
