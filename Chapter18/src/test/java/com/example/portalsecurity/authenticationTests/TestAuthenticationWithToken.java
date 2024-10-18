@@ -9,7 +9,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
-//18.5 formLogin
+//18.5 token
 @SpringBootTest
 @AutoConfigureMockMvc
 public class TestAuthenticationWithToken {
